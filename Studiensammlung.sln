@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Studiensammlung.StudiensammlungApp", "Studiensammlung.StudiensammlungApp\Studiensammlung.StudiensammlungApp.csproj", "{36F888D3-D818-4865-A32F-5DC666BD0322}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36F888D3-D818-4865-A32F-5DC666BD0322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36F888D3-D818-4865-A32F-5DC666BD0322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36F888D3-D818-4865-A32F-5DC666BD0322}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{36F888D3-D818-4865-A32F-5DC666BD0322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36F888D3-D818-4865-A32F-5DC666BD0322}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36F888D3-D818-4865-A32F-5DC666BD0322}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {67F21B6A-1AAC-4F11-9CB7-44427A672B92}
+	EndGlobalSection
+EndGlobal
