@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Studiensammlung.StudiensammlungApp", "Studiensammlung.StudiensammlungApp\Studiensammlung.StudiensammlungApp.csproj", "{36F888D3-D818-4865-A32F-5DC666BD0322}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Studiensammlung.StudiensammlungCore", "Studiensammlung.StudiensammlungCore\Studiensammlung.StudiensammlungCore.csproj", "{B16125DC-0337-43F3-BB96-1AF09FE82B80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{36F888D3-D818-4865-A32F-5DC666BD0322}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36F888D3-D818-4865-A32F-5DC666BD0322}.Release|Any CPU.Build.0 = Release|Any CPU
 		{36F888D3-D818-4865-A32F-5DC666BD0322}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B16125DC-0337-43F3-BB96-1AF09FE82B80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B16125DC-0337-43F3-BB96-1AF09FE82B80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B16125DC-0337-43F3-BB96-1AF09FE82B80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B16125DC-0337-43F3-BB96-1AF09FE82B80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
