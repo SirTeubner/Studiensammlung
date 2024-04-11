@@ -1,8 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using Microsoft.Maui.Controls.Compatibility.Hosting;
-using Studiensammlung.Lib;
 using Studiensammlung.StudiensammlungApp.ViewModels;
-using Studiensammlung.StudiensammlungCore.Services;
 
 namespace Studiensammlung.StudiensammlungApp
 {
@@ -22,17 +19,6 @@ namespace Studiensammlung.StudiensammlungApp
 
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<MainViewModel>();
-
-            string path = FileSystem.Current.AppDataDirectory;
-            string filename = "data.sqlite";
-
-            string fullpath = Path.Combine(path, filename);
-
-            System.Diagnostics.Debug.WriteLine(fullpath);
-
-            builder.Services.AddSingleton<IRepository>(new SqliteRepository(fullpath));
-
-
 
 #if DEBUG
             builder.Logging.AddDebug();
