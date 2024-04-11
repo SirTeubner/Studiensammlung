@@ -1,6 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CommunityToolkit.Maui;
+using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Controls.Compatibility.Hosting;
 using Studiensammlung.Lib;
+using Studiensammlung.StudiensammlungApp.Services;
 using Studiensammlung.StudiensammlungApp.ViewModels;
 using Studiensammlung.StudiensammlungCore.Services;
 
@@ -13,6 +15,7 @@ namespace Studiensammlung.StudiensammlungApp
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -32,7 +35,7 @@ namespace Studiensammlung.StudiensammlungApp
 
             builder.Services.AddSingleton<IRepository>(new SqliteRepository(fullpath));
 
-
+            builder.Services.AddSingleton<IAlertService, AlertService>();
 
 #if DEBUG
             builder.Logging.AddDebug();
