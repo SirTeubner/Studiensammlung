@@ -1,14 +1,12 @@
-﻿using Studiensammlung.StudiensammlungApp.ViewModels;
+﻿using Studiensammlung.StudiensammlungCore.ViewModels;
 
-namespace Studiensammlung.StudiensammlungApp
+namespace Studiensammlung.StudiensammlungApp;
+
+public partial class MainPage : ContentPage
 {
-    public partial class MainPage : ContentPage
+    public MainPage(MainViewModel viewModel)
     {
-        public MainPage(MainViewModel viewModel)
-        {
-            InitializeComponent();
-            this.BindingContext = viewModel;
-        }
+        InitializeComponent();
+        this.BindingContext = viewModel;
     }
-
 }

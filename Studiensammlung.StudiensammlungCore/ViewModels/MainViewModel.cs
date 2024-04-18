@@ -11,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Studiensammlung.StudiensammlungApp.ViewModels;
+namespace Studiensammlung.StudiensammlungCore.ViewModels;
 
 public partial class MainViewModel(IRepository repository, IAlertService alertService) : ObservableObject
 {

@@ -1,9 +1,8 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
-using Microsoft.Maui.Controls.Compatibility.Hosting;
 using Studiensammlung.Lib;
 using Studiensammlung.StudiensammlungApp.Services;
-using Studiensammlung.StudiensammlungApp.ViewModels;
+using Studiensammlung.StudiensammlungCore.ViewModels;
 using Studiensammlung.StudiensammlungCore.Services;
 
 namespace Studiensammlung.StudiensammlungApp

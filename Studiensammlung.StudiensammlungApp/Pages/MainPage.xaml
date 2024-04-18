@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewmodels="clr-namespace:CommunityToolkit.Maui.Core.Views;assembly=CommunityToolkit.Maui.Core"
+             xmlns:viewmodels="clr-namespace:Studiensammlung.StudiensammlungApp"
              Title="Studiensammlung"
              xmlns:model="clr-namespace:Studiensammlung.Lib;assembly=Studiensammlung.Lib"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             Shell.NavBarIsVisible="False"
              x:Class="Studiensammlung.StudiensammlungApp.MainPage">
 
     <ContentPage.Behaviors>
@@ -24,42 +23,74 @@
     <ScrollView>
         <Grid RowDefinitions="180, Auto" ColumnDefinitions="*,*" Margin="10">
 
-            <Grid ColumnDefinitions="80,100,80,120,*,80">
-                <Label FontSize="Caption" FontAttributes="Bold" Grid.Column="0" Text="Markierung" Padding="5"/>
-                <Label FontSize="Caption" FontAttributes="Bold" Grid.Column="1" Text="User" Padding="5"/>
-                <Label FontSize="Caption" FontAttributes="Bold" Grid.Column="2" Text="Passwort" Padding="5"/>
-                <Label FontSize="Caption" FontAttributes="Bold" Grid.Column="3" Text="Studiengang" Padding="5"/>
-                <Label FontSize="Caption" FontAttributes="Bold" Grid.Column="4" Text="Studienlänge" Padding="5"/>
-                <Label FontSize="Caption" FontAttributes="Bold" Grid.Column="6" Text="Titel" Padding="5"/>
+            <Grid RowDefinitions="Auto,*" Grid.Row="0">
+
+                <Grid ColumnDefinitions="80,100,80,120,*,80">
+                    <Label FontSize="Caption" FontAttributes="Bold" Grid.Column="0" Text="Markierung" Padding="5"/>
+                    <Label FontSize="Caption" FontAttributes="Bold" Grid.Column="1" Text="User" Padding="5"/>
+                    <Label FontSize="Caption" FontAttributes="Bold" Grid.Column="2" Text="Passwort" Padding="5"/>
+                    <Label FontSize="Caption" FontAttributes="Bold" Grid.Column="3" Text="Studiengang" Padding="5"/>
+                    <Label FontSize="Caption" FontAttributes="Bold" Grid.Column="4" Text="Studienlänge" Padding="5"/>
+                    <Label FontSize="Caption" FontAttributes="Bold" Grid.Column="6" Text="Titel" Padding="5"/>
+                </Grid>
+
+                <CollectionView Grid.Row="1" SelectionMode="Single" SelectedItem="{Binding SelectedEntry}" ItemsSource="{Binding Entries}">
+                    <CollectionView.EmptyView>
+                        <Label Padding="10" Text="Es wurde noch kein Eintrag gefunden"/>
+                    </CollectionView.EmptyView>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Entry">
+                            <Grid ColumnDefinitions="80,100,80,120,*,80">
+
+
+                                <Label Grid.Column="1" Text="{Binding User}" Padding="5"/>
+                                <Label Grid.Column="2" Text="{Binding Password}" Padding="5"/>
+                                <Label Grid.Column="3" Text="{Binding StudyCourse}" Padding="5"/>
+                                <Label Grid.Column="4" Text="{Binding StudyLength}" Padding="5"/>
+                                <Label Grid.Column="5" Text="{Binding Title}" Padding="5"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </Grid>
 
-            <CollectionView Grid.Row="1" SelectionMode="Single" SelectedItem="{Binding SelectedEntry}" ItemsSource="{Binding Entries}">
-                <CollectionView.EmptyView>
-                    <Label Padding="10" Text="Es wurde noch kein Eintrag gefunden"/>
-                </CollectionView.EmptyView>
+            <Grid Grid.Row="2" Padding="10" ColumnSpacing="10" RowSpacing="20" ColumnDefinitions="*,*" RowDefinitions="*,*,*,*,*">
+                <Label Text="Neues Studium hinzufügen" FontSize="Subtitle" SemanticProperties.HeadingLevel="Level2" Grid.Row="0" Grid.ColumnSpan="2"/>
 
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="model:Entry">
-                        <Grid ColumnDefinitions="80,100,80,120,*,80">
-                            
-                            
-                            <Label Grid.Column="1" Text="{Binding User}" Padding="5"/>
-                            <Label Grid.Column="2" Text="{Binding Password}" Padding="5"/>
-                            <Label Grid.Column="3" Text="{Binding StudyCourse}" Padding="5"/>
-                            <Label Grid.Column="4" Text="{Binding StudyLength}" Padding="5"/>
-                            <Label Grid.Column="5" Text="{Binding Title}" Padding="5"/>
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                <StackLayout Grid.Row="1">
+                    <Label Text="User"/>
+                    <Entry Text="{Binding User}"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="1">
+                    <Label Text="Password"/>
+                    <Entry Text="{Binding Password}"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Grid.ColumnSpan="2">
+                    <Label Text="Studycourse"/>
+                    <Entry Text="{Binding Studycourse}"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="3">
+                    <Label Text="Studylength"/>
+                    <Entry Text="{Binding StudyLength}"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="3" Grid.Column="1">
+                    <Label Text="Title"/>
+                    <Entry Text="{Binding Title}"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Button Text="Eintrag Speichern" Command="{Binding AddCommand}"/>
+                </StackLayout>
+
+            </Grid>
+
+
 
         </Grid>
-        
-        
-        
     </ScrollView>
-    
-    
-    
-
 </ContentPage>
