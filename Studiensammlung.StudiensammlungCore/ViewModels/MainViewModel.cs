@@ -97,42 +97,42 @@ public partial class MainViewModel(IRepository repository, IAlertService alertSe
         }
 
 
-        [RelayCommand]
-        void LoadData()
-        {
-            if (!_isLoaded)
-            {
-                var entries = _repository.GetAll();
-
-                foreach (var entry in entries)
-                {
-                    Entries.Add(entry);
-                }
-                _isLoaded = true;
-            }
-        }
-
-        [RelayCommand]
-        void Add()
-        {
-            Lib.Entry entry = new(this.User, this.Password, this.StudyCourse, this.StudyLength, this.Title, false);
-
-            var result = _repository.Add(entry);
-
-            if (result)
-            {
-                this.Entries.Add(entry);
-                this.User = string.Empty;
-                this.Password = string.Empty;
-                this.StudyCourse = string.Empty;
-                this.StudyLength = 0;
-
-                WeakReferenceMessenger.Default.Send(new AddMessage(entry));
-            }
-        }
-
     }
 
+
+    [RelayCommand]
+    void LoadData()
+    {
+        if (!_isLoaded)
+        {
+            var entries = _repository.GetAll();
+
+            foreach (var entry in entries)
+            {
+                Entries.Add(entry);
+            }
+            _isLoaded = true;
+        }
+    }
+
+    [RelayCommand]
+    void Add()
+    {
+        Lib.Entry entry = new(this.User, this.Password, this.StudyCourse, this.StudyLength, this.Title, false);
+
+        var result = _repository.Add(entry);
+
+        if (result)
+        {
+            this.Entries.Add(entry);
+            this.User = string.Empty;
+            this.Password = string.Empty;
+            this.StudyCourse = string.Empty;
+            this.StudyLength = 0;
+
+            WeakReferenceMessenger.Default.Send(new AddMessage(entry));
+        }
+    }
 
 
 }
