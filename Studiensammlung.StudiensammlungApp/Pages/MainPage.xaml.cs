@@ -1,6 +1,6 @@
 ﻿using Studiensammlung.StudiensammlungCore.ViewModels;
 
-namespace Studiensammlung.StudiensammlungApp;
+namespace Studiensammlung.StudiensammlungApp.Pages;
 
 public partial class MainPage : ContentPage
 {

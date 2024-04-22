@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewmodels="clr-namespace:Studiensammlung.StudiensammlungApp"
+             xmlns:viewmodels="clr-namespace:Studiensammlung.StudiensammlungCore.ViewModels;assembly=Studiensammlung.StudiensammlungCore"
              Title="Studiensammlung"
+             x:DataType="viewmodels:MainViewModel"
              xmlns:model="clr-namespace:Studiensammlung.Lib;assembly=Studiensammlung.Lib"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:Class="Studiensammlung.StudiensammlungApp.MainPage">
+             x:Class="Studiensammlung.StudiensammlungApp.Pages.MainPage">
 
     <ContentPage.Behaviors>
         <toolkit:EventToCommandBehavior EventName="Appearing"
@@ -70,7 +71,7 @@
 
                 <StackLayout Grid.Row="2" Grid.ColumnSpan="2">
                     <Label Text="Studycourse"/>
-                    <Entry Text="{Binding Studycourse}"/>
+                    <Entry Text="{Binding StudyCourse}"/>
                 </StackLayout>
 
                 <StackLayout Grid.Row="3">
