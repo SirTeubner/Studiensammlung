@@ -95,7 +95,7 @@ public partial class MainViewModel(IRepository repository, IAlertService alertSe
         {
             _alertService.ShowAlert("Fehler", "Der Eintrag wurde nicht gefunden");
         }
-    }
+
 
         [RelayCommand]
         void LoadData()
@@ -133,3 +133,6 @@ public partial class MainViewModel(IRepository repository, IAlertService alertSe
 
     }
 
+
+
+}
