@@ -46,7 +46,7 @@
 
 
                                 <Label Grid.Column="1" Text="{Binding User}" Padding="5"/>
-                                <Label Grid.Column="2" Text="{Binding Password}" Padding="5"/>
+                                <Label Grid.Column="2" Text="{Binding Password}" Padding="5" />
                                 <Label Grid.Column="3" Text="{Binding StudyCourse}" Padding="5"/>
                                 <Label Grid.Column="4" Text="{Binding StudyLength}" Padding="5"/>
                                 <Label Grid.Column="5" Text="{Binding Title}" Padding="5"/>
@@ -66,7 +66,7 @@
 
                 <StackLayout Grid.Row="1" Grid.Column="1">
                     <Label Text="Password"/>
-                    <Entry Text="{Binding Password}"/>
+                    <Entry Text="{Binding Password}" IsPassword="True"/>
                 </StackLayout>
 
                 <StackLayout Grid.Row="2" Grid.ColumnSpan="2">
@@ -90,6 +90,19 @@
 
             </Grid>
 
+            <Grid Padding="10" Grid.Column="1" Grid.RowSpan="4" IsVisible="{Binding SelectedEntry, Converter={StaticResource IsNullConverter}}">
+                <Label FontAttributes="Bold" FontSize="Medium" HorizontalTextAlignment="Center" Text="Sie haben keinen Datensatz ausgewählt"/>
+            </Grid>
+            <Grid Padding="10" Grid.Column="1" Grid.RowSpan="4" IsVisible="{Binding SelectedEntry, Converter={StaticResource IsNotNullConverter}}">
+                <StackLayout>
+                    <Label Text="{Binding SelectedEntry.StudyCourse}" FontSize="Large" FontAttributes="Bold" TextColor="{StaticResource Primary}" />
+                    <Label Text="{Binding SelectedEntry.User, StringFormat='Nutzername: {0}'}" FontSize="Small" />
+                    <Label Text="{Binding SelectedEntry.StudyLength, StringFormat='Studienlänge: {0}'}" FontSize="Small" />
+                    <Label Text="{Binding SelectedEntry.Title, StringFormat='Erhaltener Titel: {0}'}" FontSize="Small" />
+
+                    <Button Command="{Binding DeleteCommand}" BackgroundColor="Red" TextColor="White" FontSize="Large" Text="Eintrag löschen!"/>
+                </StackLayout>
+            </Grid>
 
 
         </Grid>

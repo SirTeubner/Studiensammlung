@@ -73,7 +73,7 @@ public partial class MainViewModel(IRepository repository, IAlertService alertSe
     [RelayCommand]
     void Delete(Lib.Entry entry)
     {
-        Lib.Entry entrytodelete = _repository.Find(entry.Id);
+        Lib.Entry entrytodelete = _repository.Find(entry?.Id);
 
         if (entrytodelete != null)
         {

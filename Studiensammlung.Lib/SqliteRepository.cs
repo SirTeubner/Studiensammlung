@@ -28,7 +28,7 @@ public class SqliteRepository : IRepository
                 return true;
             }
 
-            // return true
+
         }
         catch (Exception ex)
         {
@@ -52,8 +52,7 @@ public class SqliteRepository : IRepository
         catch (Exception ex)
         {
             System.Diagnostics.Debug.WriteLine(ex.Message);
-            // bei einem Fehler wir eine leere Liste zurückgegeben
-            // ev. wäre null besser ...
+
             return false;
         }
     }
