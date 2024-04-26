@@ -44,6 +44,19 @@
                         <DataTemplate x:DataType="model:Entry">
                             <Grid ColumnDefinitions="80,100,80,120,*,80">
 
+                                <Image VerticalOptions="Center" HorizontalOptions="Center"
+                                       Source="star.png" IsVisible="{Binding Favorite}" HeightRequest="15" >
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:MainViewModel}}, Path=ToggleFavoriteCommand}" CommandParameter="{Binding .}" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+
+                                <Image VerticalOptions="Center" HorizontalOptions="Center"
+                                        Source="star_empty.png" IsVisible="{Binding Favorite, Converter={StaticResource InvertedBoolConverter}}" HeightRequest="15" >
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:MainViewModel}}, Path=ToggleFavoriteCommand}" CommandParameter="{Binding .}" />
+                                    </Image.GestureRecognizers>
+                                </Image>
 
                                 <Label Grid.Column="1" Text="{Binding User}" Padding="5"/>
                                 <Label Grid.Column="2" Text="{Binding Password}" Padding="5" />
@@ -100,7 +113,7 @@
                     <Label Text="{Binding SelectedEntry.StudyLength, StringFormat='Studienlänge: {0}'}" FontSize="Small" />
                     <Label Text="{Binding SelectedEntry.Title, StringFormat='Erhaltener Titel: {0}'}" FontSize="Small" />
 
-                    <Button Command="{Binding DeleteCommand}" BackgroundColor="Red" TextColor="White" FontSize="Large" Text="Eintrag löschen!"/>
+                    <Button Command="{Binding DeleteCommand}" CommandParameter="{Binding SelectedEntry}" BackgroundColor="Red" TextColor="White" FontSize="Large" Text="Eintrag löschen!"/>
                 </StackLayout>
             </Grid>
 
