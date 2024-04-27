@@ -69,4 +69,10 @@
 	  <ProjectReference Include="..\Studiensammlung.StudiensammlungCore\Studiensammlung.StudiensammlungCore.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <MauiXaml Update="Pages\StatisticPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>

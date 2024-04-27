@@ -8,9 +8,18 @@
     Shell.FlyoutBehavior="Disabled"
     Title="Studiensammlung.StudiensammlungApp">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate pages:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <Tab Title="Home">
+            <ShellContent
+                ContentTemplate="{DataTemplate pages:MainPage}"/>
+        </Tab>
+
+        <Tab Title="Diagram">
+            <ShellContent 
+                ContentTemplate="{DataTemplate pages:StatisticPage}"
+                />
+        </Tab>
+    </TabBar>
+
 
 </Shell>
