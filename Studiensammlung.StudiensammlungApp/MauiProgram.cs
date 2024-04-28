@@ -5,6 +5,7 @@ using Studiensammlung.StudiensammlungApp.Pages;
 using Studiensammlung.StudiensammlungApp.Services;
 using Studiensammlung.StudiensammlungCore.ViewModels;
 using Studiensammlung.StudiensammlungCore.Services;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace Studiensammlung.StudiensammlungApp
 {
@@ -16,6 +17,7 @@ namespace Studiensammlung.StudiensammlungApp
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
+                .ConfigureSyncfusionCore()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

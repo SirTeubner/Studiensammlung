@@ -9,7 +9,7 @@
     Title="Studiensammlung.StudiensammlungApp">
 
     <TabBar>
-        <Tab Title="Home">
+        <Tab Title="Datensätze">
             <ShellContent
                 ContentTemplate="{DataTemplate pages:MainPage}"/>
         </Tab>
