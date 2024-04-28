@@ -113,7 +113,8 @@
                     <Label Text="{Binding SelectedEntry.StudyLength, StringFormat='Studienlänge: {0}'}" FontSize="Small" />
                     <Label Text="{Binding SelectedEntry.Title, StringFormat='Erhaltener Titel: {0}'}" FontSize="Small" />
 
-                    <Button Command="{Binding DeleteCommand}" CommandParameter="{Binding SelectedEntry}" BackgroundColor="Red" TextColor="White" FontSize="Large" Text="Eintrag löschen!"/>
+                    <Button Command="{Binding DeleteCommand}" CommandParameter="{Binding SelectedEntry}" Margin="10" BackgroundColor="Red" TextColor="White" FontSize="Large" Text="Eintrag löschen!"/>
+                    <Button Command="{Binding UpdateCommand}" CommandParameter="{Binding SelectedEntry}" Margin="10" BackgroundColor="Green" TextColor="White" FontSize="Large" Text="Eintrag ändern!"/>
                 </StackLayout>
             </Grid>
 

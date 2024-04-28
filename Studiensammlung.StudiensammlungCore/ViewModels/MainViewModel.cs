@@ -10,6 +10,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entry = Studiensammlung.Lib.Entry;
 
 namespace Studiensammlung.StudiensammlungCore.ViewModels;
 
@@ -96,7 +97,32 @@ public partial class MainViewModel(IRepository repository, IAlertService alertSe
             _alertService.ShowAlert("Fehler", "Der Eintrag wurde nicht gefunden");
         }
 
+    }
 
+    [RelayCommand]
+    void Update(Lib.Entry entry)
+    {
+        Lib.Entry entrytoupdate = _repository.Find(entry.Id);
+
+        if(entrytoupdate != null)
+        {
+            this.Entries.Remove(entry);
+
+            this.Entries.Add(new Lib.Entry(this.User, this.Password, this.StudyCourse, this.StudyLength, this.Title, entrytoupdate.Favorite, entrytoupdate.Id));
+
+            var resultupdate = _repository.Update(entry);
+
+            if (resultupdate)
+            {
+                _alertService.ShowAlert("Erfolg", "Der Eintrag wurde geändert");
+            }
+
+            else
+            {
+                _alertService.ShowAlert("Fehler", "Der Eintrag konnte nicht gefunden werden");
+            }
+
+        }
     }
 
 
