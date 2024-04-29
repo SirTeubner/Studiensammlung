@@ -106,14 +106,26 @@ public partial class MainViewModel(IRepository repository, IAlertService alertSe
 
         if(entrytoupdate != null)
         {
-            this.Entries.Remove(entry);
+           
+            
 
-            this.Entries.Add(new Lib.Entry(this.User, this.Password, this.StudyCourse, this.StudyLength, this.Title, entrytoupdate.Favorite, entrytoupdate.Id));
+            entrytoupdate.User = this.User;
+            entrytoupdate.Password = this.Password;
+            entrytoupdate.StudyCourse = this.StudyCourse;
+            entrytoupdate.StudyLength = this.StudyLength;
+            entrytoupdate.Title = this.Title;
 
-            var resultupdate = _repository.Update(entry);
+            var resultupdate = _repository.Update(entrytoupdate);
+
 
             if (resultupdate)
             {
+                this.Entries.Remove(entry);
+
+                this.Entries.Add(entrytoupdate);
+
+                this.SelectedEntry = entrytoupdate;
+
                 _alertService.ShowAlert("Erfolg", "Der Eintrag wurde geändert");
             }
 
