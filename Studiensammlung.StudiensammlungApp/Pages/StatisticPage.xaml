@@ -8,6 +8,7 @@
              x:DataType="viewmodels:StatisticViewModel"
              x:Class="Studiensammlung.StudiensammlungApp.Pages.StatisticPage"
              Title="StatisticPage">
+    
 
     <ContentPage.Behaviors>
         <toolkit:EventToCommandBehavior EventName="Appearing"
@@ -20,6 +21,7 @@
                                 ShowDataLabels="True"
                                 XBindingPath="User"
                                 YBindingPath="StudyLength"
+                                Width=".2"
                                 Label="Studienlänge">
 
             </chart:ColumnSeries>
